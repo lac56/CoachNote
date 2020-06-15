@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TableLayout
+        android:id="@+id/showMembersTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionsMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"></TableLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/floatingActionsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:fab_addButtonColorNormal="@color/pink"
+        app:fab_addButtonColorPressed="@color/pink_pressed"
+        app:fab_addButtonPlusIconColor="@color/white"
+        app:fab_labelStyle="@style/customFab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action_add_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_icon="@drawable/ic_add_pink"
+            app:fab_size="mini"
+            app:fab_title="Add member"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action_delete_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_icon="@drawable/ic_add_pink"
+            app:fab_size="mini"
+            app:fab_title="Delete member"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
