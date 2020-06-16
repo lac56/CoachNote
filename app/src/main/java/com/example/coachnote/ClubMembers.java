@@ -30,8 +30,8 @@ public class ClubMembers extends AppCompatActivity {
     }
 
     public void  openDeleteClubMemberActivity() {
-        Intent insertNewClubMemberIntent = new Intent(this, InsertNewClubMember.class);
-        startActivity(insertNewClubMemberIntent);
+        Intent deleteClubMemberIntent = new Intent(this, DeleteClubMember.class);
+        startActivity(deleteClubMemberIntent);
     }
 
     @Override
