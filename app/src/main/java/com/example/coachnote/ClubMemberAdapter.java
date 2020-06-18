@@ -9,9 +9,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * This class is required for the RecyclerView.
+ * With this we are able to show our database result.
+ */
 public class ClubMemberAdapter extends RecyclerView.Adapter<ClubMemberAdapter.ClubMemberViewHolder> {
-    private Context mContext;
-    private Cursor mCursor;
+    private Context mContext; /** mContext: It will store infromatoion about DeleteClubMemberClass*/
+    private Cursor mCursor; /** mCursor: It holds the incoming data from Club table */
 
     // Constructor
     public ClubMemberAdapter(Context context, Cursor cursor) {
@@ -28,12 +32,16 @@ public class ClubMemberAdapter extends RecyclerView.Adapter<ClubMemberAdapter.Cl
             clubMemberText = itemView.findViewById(R.id.textview_club_member_name);
         }
     }
+
+    // This method creates a ViewHolder. This holds the database result.
+    // So it will creates one club member list to every objects.
     @Override
     public ClubMemberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.club_member_list, parent, false);
         return new ClubMemberViewHolder(view);
     }
+    // This method assign the data to the view holder.
     @Override
     public void onBindViewHolder(ClubMemberViewHolder holder, int position) {
         if (!mCursor.moveToPosition(position)) {
@@ -43,6 +51,8 @@ public class ClubMemberAdapter extends RecyclerView.Adapter<ClubMemberAdapter.Cl
         String ClubMemberName = mCursor.getString(mCursor.getColumnIndex(DatabaseHelper.CLUBMEMBERS_COL_2));
         holder.clubMemberText.setText(ClubMemberName);
     }
+
+    // It has to be overridden. Returns with the number of rows in the cursor.
     @Override
     public int getItemCount() {
         return mCursor.getCount();

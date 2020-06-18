@@ -3,11 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
+
     <TextView
         android:id="@+id/textview_club_member_name"
-        android:layout_width="wrap_content"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Empty Item"
+        android:background="@color/half_black"
         android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/delete_club_member_image_view"
+        android:layout_width="64dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:src="@drawable/ic_club_member_delete" />
 </LinearLayout>
